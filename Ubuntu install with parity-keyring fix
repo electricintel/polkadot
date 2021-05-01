@@ -1,7 +1,12 @@
-#polkadot parity.io is down right now
-
+#polkadot parity.io installation notes. Successful fixes so far.
 
 #Copy and paste the lines without an "#" into your terminal one at a time, press enter after each one
+
+
+#make sure the i386 architecture is enabled
+
+sudo dpkg --add-architecture i386
+
 
 #Import the security@parity.io GPG key
 
@@ -9,11 +14,13 @@ gpg --recv-keys --keyserver hkps://keys.mailvelope.com 9D4B2B6EB8F97156D19669A9F
 
 gpg --export 9D4B2B6EB8F97156D19669A9FF0812D491B96798 > /usr/share/keyrings/parity.gpg
 
+
 #Add the Parity repository and update the package index
 
 echo 'deb [signed-by=/usr/share/keyrings/parity.gpg] https://releases.parity.io/deb release main' > /etc/apt/sources.list.d/parity.list 
 
 apt update
+
 
 #if your parity doesn't update, login to your terminal as root (the command is sudo -i) and use the following numbered steps:
 
@@ -33,11 +40,11 @@ apt-get update --allow-insecure-repositories
 4.
 apt install parity-keyring
 
+
 #Install Polkadot
 apt install polkadot
 
 
 
-#polkadot parity.io is down right now
 
 
