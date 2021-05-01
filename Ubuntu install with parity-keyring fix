@@ -1,4 +1,9 @@
 #polkadot parity.io installation notes. Successful fixes so far.
+#After this operation, 92.4 MB of additional disk space will be used.
+#Err:1 https://releases.parity.io/deb release/main amd64 polkadot amd64 0.8.30
+#Could not resolve 'releases.parity.io'
+#fix is not working as of May 1, 2021
+
 
 #Copy and paste the lines without an "#" into your terminal one at a time, press enter after each one
 
