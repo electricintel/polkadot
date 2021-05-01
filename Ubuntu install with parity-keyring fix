@@ -1,0 +1,40 @@
+#Copy and paste the lines without an "#" into your terminal one at a time, press enter after each one
+
+#Import the security@parity.io GPG key
+
+gpg --recv-keys --keyserver hkps://keys.mailvelope.com 9D4B2B6EB8F97156D19669A9FF0812D491B96798 
+
+gpg --export 9D4B2B6EB8F97156D19669A9FF0812D491B96798 > /usr/share/keyrings/parity.gpg
+
+#Add the Parity repository and update the package index
+
+echo 'deb [signed-by=/usr/share/keyrings/parity.gpg] https://releases.parity.io/deb release main' > /etc/apt/sources.list.d/parity.list 
+
+apt update
+
+#if your parity doesn't update, login to your terminal as root (the command is sudo -i) and use the following numbered steps:
+
+1.
+apt-get update
+2.
+apt-get update --allow-unauthenticated
+3.
+apt-get update --allow-insecure-repositories
+
+#the below errors will be thrown each time, but go to the step 4 anyway
+#(W: GPG error: https://releases.parity.io/deb release InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3B1FE9FFD0787F8B
+#W: The repository 'https://releases.parity.io/deb release InRelease' is not signed.
+#N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+#N: See apt-secure(8) manpage for repository creation and user configuration details.)
+
+4.
+apt install parity-keyring
+
+#Install Polkadot
+apt install polkadot
+
+
+
+#should work!!!
+
+
