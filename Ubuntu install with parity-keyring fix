@@ -1,3 +1,6 @@
+#polkadot parity.io is down right now
+
+
 #Copy and paste the lines without an "#" into your terminal one at a time, press enter after each one
 
 #Import the security@parity.io GPG key
@@ -35,6 +38,6 @@ apt install polkadot
 
 
 
-#should work!!!
+#polkadot parity.io is down right now
 
 
